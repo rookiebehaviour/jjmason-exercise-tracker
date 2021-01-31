@@ -107,6 +107,7 @@ app.get('/api/exercise/log', (req, res) => {
       if (req.query.limit) {
         resObject.log = resObject.log.slice(0, req.query.limit)
       }
+      resObject = resObject.toJSON()
       resObject['count'] = result.log.length
       res.json(resObject)
     }
